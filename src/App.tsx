@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import { AuthProvider } from './hooks/useAuth';
 import Layout from './components/layout/Layout';
@@ -11,7 +11,7 @@ import FloorPlans from './pages/admin/FloorPlans';
 function App() {
   return (
     <AuthProvider>
-      <BrowserRouter>
+      <HashRouter>
         <Toaster position="top-right" />
         <Routes>
           <Route path="/login" element={<Login />} />
@@ -23,7 +23,7 @@ function App() {
             <Route path="admin/plantas" element={<FloorPlans />} />
           </Route>
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </AuthProvider>
   );
 }
